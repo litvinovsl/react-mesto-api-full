@@ -1,0 +1,5 @@
+@media screen and (max-width: 600px) {
+    .popup__edit-text_update-avatar{
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,14 @@
+.element{
+    background-color: white;
+    border-radius: 3%;
+    overflow:hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+}
+@media screen and (max-width: 600px) {
+    .element {
+        min-height: 361px;
+    }
+}

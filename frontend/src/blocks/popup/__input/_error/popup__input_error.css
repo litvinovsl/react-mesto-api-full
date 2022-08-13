@@ -1,0 +1,51 @@
+.popup__input_error{
+    border-bottom: 1px solid rgba(255, 3, 3, 0.8);
+}
+.popup__input-error{
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    visibility: hidden;
+    position: absolute;
+}
+.popup__input-error_active{
+    visibility: visible;
+}
+.popup__place-name-error{
+    top: 148px;
+}
+.popup__place-link-error{
+    top: 204px;
+}
+.popup__username-error{
+    top: 148px;
+}
+.popup__user-about-error{
+    top: 204px;
+}
+.popup__avatar-link-error{
+    top: 150px;
+}
+
+@media screen and (max-width: 600px) {
+    .popup__input-error {
+        font-size: 10px;
+        line-height: 12px;
+        width: 238px;
+    }
+    .popup__place-name-error{
+        top: 148px;
+    }
+    .popup__place-link-error{
+        top: 205px;
+    }
+    .popup__username-error{
+        top: 148px;
+    }
+    .popup__user-about-error{
+        top: 205px;
+    }
+    .popup__avatar-link-error{
+        top: 120px;
+    }
+}

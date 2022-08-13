@@ -1,0 +1,14 @@
+.profile__user-name-edit{
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+}
+@media screen and (max-width: 600px) {
+    .profile__user-name-edit {
+        gap: 13px;
+    }
+    .profile__user-name-edit:nth-child(1){
+        align-self: flex-start;
+        margin: auto;
+    }
+}

@@ -1,0 +1,20 @@
+.popup__edit-text{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    align-self: start;
+    margin-left: 36px;
+    margin-bottom: 54px;
+    margin-top: 34px;
+}
+@media screen and (max-width: 600px) {
+    .popup__edit-text {
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: 25px;
+        margin-left: 22px;
+        margin-bottom: 69px;
+    }
+}

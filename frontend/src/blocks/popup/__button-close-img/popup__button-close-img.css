@@ -1,0 +1,15 @@
+.popup__button-close-img{
+    width: 32px;
+    height: 32px;
+    margin: -3px 0px 0px -8px;
+    transition: opacity .3s ease-in-out;
+}
+.popup__button-close-img:hover {
+    opacity: .6;
+}
+@media screen and (max-width: 600px) {
+    .popup__button-close-img {
+        width: 20px;
+        height: 20px;
+    }
+}

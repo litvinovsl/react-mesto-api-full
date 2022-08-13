@@ -1,0 +1,88 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 358px;
+}
+
+.register__title {
+    height: 29px;
+    align-self: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 29px;
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+
+.register__input {
+    margin-bottom: 30px;
+    border: none;
+    background-color: black;
+    border-bottom: 1px solid #CCC;
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    height: 27px;
+    line-height: 17px;
+    outline: none;
+    width: 354px;
+}
+
+.register__submit {
+    width: 100%;
+    height: 50px;
+    margin-top: 186px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.register__link {
+    height: 17px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+.register__link__login{
+    color: #FFF;
+    text-decoration: none;
+    margin-left: 3px;
+    transition: opacity .3s ease-in-out;
+}
+
+.register__link__login:hover {
+    opacity: .6;
+}
+
+@media screen and (max-width: 400px) {
+    .register__title {
+        height: 24px;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+    .register__input{
+        width: 260px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .register{
+        width: 260px;
+    }
+    .register__submit{
+        margin-top: 143px;
+    }
+  }

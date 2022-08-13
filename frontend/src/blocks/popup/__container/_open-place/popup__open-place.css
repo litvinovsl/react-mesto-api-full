@@ -1,0 +1,5 @@
+.popup__open-place{
+    margin: 0;
+    position: relative;
+    z-index: 3;
+}

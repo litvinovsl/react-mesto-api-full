@@ -1,0 +1,31 @@
+.profile__edit-butt{
+    background-color: #000000;
+    border-width: 1px;
+    border-color: white;
+    align-self:center;
+    justify-content: center;
+    justify-items: center;
+    width: 24px;
+    height: 24px;
+    margin-top: 9px;
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
+}
+    
+.profile__edit-butt:hover {
+    opacity: .6;
+}
+
+@media screen and (max-width: 770px) {
+    .profile__edit-butt {
+        width: 18px;
+        height: 18px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .profile__edit-butt {
+        align-self: flex-end;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+}
