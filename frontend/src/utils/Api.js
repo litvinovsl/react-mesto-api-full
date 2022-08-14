@@ -63,7 +63,7 @@ class Api {
     }
 
     addCardLike(cardId) {
-        const newUrl = this._baseUrl + `/cards/likes/${cardId}`;
+        const newUrl = this._baseUrl + `/cards/${cardId}/likes`;
         return fetch(newUrl, {
           method: 'PUT',
           headers: this._headers,
@@ -71,7 +71,7 @@ class Api {
     }
 
     deleteCardLike(cardId) {
-        const newUrl = this._baseUrl + `/cards/likes/${cardId}`;
+        const newUrl = this._baseUrl + `/cards/${cardId}/likes`;
         return fetch(newUrl, {
           method: 'DELETE',
           headers: this._headers,
@@ -79,7 +79,7 @@ class Api {
     }
 
     setCardLike(cardId, checkLike) {
-        const newUrl = this._baseUrl + `/cards/likes/${cardId}`;
+        const newUrl = this._baseUrl + `/cards/${cardId}/likes`;
         return fetch(newUrl, {
             method: checkLike ? 'DELETE' : 'PUT',
             headers: this._headers,
@@ -104,12 +104,21 @@ class Api {
 }
 
 const api = new Api({
-    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-40',
+    baseUrl: 'https://api.litvinovsl.nomoredomains.sbs',
     headers: {
-      authorization: '6cbd57a7-9435-4249-951e-f8947dba9801',
-      'Content-Type': 'application/json'
+      authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
     }
 });
+
+// const api = new Api({
+//     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-40',
+//     headers: {
+//       authorization: '6cbd57a7-9435-4249-951e-f8947dba9801',
+//       'Content-Type': 'application/json'
+//     }
+// });
 
 export default api;
 

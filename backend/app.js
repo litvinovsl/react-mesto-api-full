@@ -7,6 +7,7 @@ const cardsRouter = require('./routes/card');
 const errorRouter = require('./routes/error');
 const { login, createUser } = require('./controllers/user');
 const auth = require('./middlewares/auth');
+const cors = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const {
   validatorLogin,
@@ -19,6 +20,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
 });
 
+app.use(cors);
 app.use(requestLogger);
 
 app.use(bodyParser.json());

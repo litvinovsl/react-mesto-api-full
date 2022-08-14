@@ -1,4 +1,6 @@
-const BASE_URL = "https://auth.nomoreparties.co";
+// const BASE_URL = "https://auth.nomoreparties.co";
+const BASE_URL = "https://api.litvinovsl.nomoredomains.sbs";
+
 
 function getResponse(res) {
   if (res.ok) {
@@ -36,7 +38,7 @@ export const login = (password, email) => {
 }
 
 export const validToken = (token) => {
-  return fetch(`https://auth.nomoreparties.co/users/me`, {
+  return fetch(`https://api.litvinovsl.nomoredomains.sbs/users/me`, {
     method: 'GET',
     headers: {
       "Content-Type": "application/json",
@@ -47,3 +49,16 @@ export const validToken = (token) => {
     return getResponse(res)
   })
 }
+
+// export const validToken = (token) => {
+//   return fetch(`https://auth.nomoreparties.co/users/me`, {
+//     method: 'GET',
+//     headers: {
+//       "Content-Type": "application/json",
+//       "Authorization" : `Bearer ${token}`
+//     } 
+//   })
+//   .then((res) => {
+//     return getResponse(res)
+//   })
+// }

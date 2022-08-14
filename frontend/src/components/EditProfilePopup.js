@@ -44,7 +44,7 @@ function EditProfilePopup(props) {
     >
       <input
         id="popup__username"
-        value={name || "Имя"}
+        value={name || ""}
         onChange={handleChangeName}
         type="text"
         className="popup__input"
@@ -57,7 +57,7 @@ function EditProfilePopup(props) {
       <span className="popup__username-error popup__input-error"></span>
       <input
         id="popup__user-about"
-        value={description || "О себе.."}
+        value={description || ""}
         onChange={handleChangeDescription}
         type="text"
         className="popup__input"

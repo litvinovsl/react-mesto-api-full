@@ -37,12 +37,16 @@ function App() {
     api
       .getUserInfo()
       .then((data) => {
-        setСurrentUser(data);
+        console.log("tyt");
+        // console.log(data.data);
+
+
+        setСurrentUser(data.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [massageTooltip]);
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -104,7 +108,9 @@ function App() {
     api
       .getPageData()
       .then(([cardsData, userData]) => {
-        setCards(cardsData);
+        // console.log(cardsData.reverse());
+
+        setCards(cardsData.reverse());
       })
       .catch((err) => {
         console.log(err);
@@ -116,7 +122,7 @@ function App() {
   }, [loggedIn])
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
 
     api.setCardLike(card._id, isLiked)
       .then((data) => {
@@ -173,6 +179,7 @@ function App() {
 function checkToken() {
 
   const token = localStorage.getItem('jwt');
+  console.log(token)
   if(token) {
     validToken(token)
     .then((res) => {
