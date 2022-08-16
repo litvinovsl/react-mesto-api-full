@@ -37,10 +37,6 @@ function App() {
     api
       .getUserInfo()
       .then((data) => {
-        console.log("tyt");
-        // console.log(data.data);
-
-
         setСurrentUser(data.data);
       })
       .catch((err) => {
@@ -179,15 +175,14 @@ function App() {
 function checkToken() {
 
   const token = localStorage.getItem('jwt');
-  console.log(token)
   if(token) {
     validToken(token)
     .then((res) => {
       if(res) {
         setUserEmal(res.data.email);
+        setСurrentUser(res.data);
         setLoggedIn(true);
         history.push('/');
-        // console.log('userEmail: ', userEmal);
       };
     })
     .catch((err) => {
