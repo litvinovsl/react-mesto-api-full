@@ -1,6 +1,6 @@
 const allowedCors = [
   'https://api.litvinovsl.nomoredomains.sbs',
-  'http://litvinovsl.nomoredomains.sbs',
+  'https://litvinovsl.nomoredomains.sbs',
   'http://localhost:3000'
 ];
 
