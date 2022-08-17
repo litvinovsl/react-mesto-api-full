@@ -8,22 +8,29 @@ class Api {
         if (res.ok) {
             return res.json();
         } else {
-            console.log('!!!!!!!!!!!!!!!!!res.ok');
             return Promise.reject(`${res.status} ${res.statusText}`);
         }
     }
 
-    _getInitialCards() {
+    getInitialCards(token) {
         const newUrl = this._baseUrl + '/cards';
         return fetch(newUrl, {
-          headers: this._headers,
+          method: 'GET',
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization" : `Bearer ${token}`
+          } ,
         }).then(this._checkReply);
     }
 
-    getUserInfo() {
+    getUserInfo(token) {
         const newUrl = this._baseUrl + '/users/me';
         return fetch(newUrl, {
-            headers: this._headers,
+          method: 'GET',
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization" : `Bearer ${token}`
+          },
         }).then(this._checkReply);
     }
 
@@ -97,7 +104,7 @@ class Api {
     }
 
     getPageData(){
-        return Promise.all([this._getInitialCards(), this.getUserInfo()]);
+        return Promise.all([this.getInitialCards(), this.getUserInfo()]);
     }
 
     // другие методы работы с API
@@ -106,7 +113,8 @@ class Api {
 const api = new Api({
     baseUrl: 'https://api.litvinovsl.nomoredomains.sbs',
     headers: {
-      authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      "Authorization" : `Bearer ${localStorage.getItem('jwt')}`,
+    //   authorization: `Bearer ${localStorage.getItem('jwt')}`,
       'Content-Type': 'application/json',
       Accept: 'application/json',
     }

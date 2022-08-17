@@ -34,15 +34,37 @@ function App() {
   const history = useHistory();
 
   React.useEffect(() => {
+    checkToken();
+  }, [loggedIn]);
+
+  React.useEffect(() => {
+    const token = localStorage.getItem('jwt');
+
     api
-      .getUserInfo()
+      .getInitialCards(token)
       .then((data) => {
+        console.log('getnital: ', data)
+        setCards(data.reverse());
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [loggedIn]);
+
+  React.useEffect(() => {
+    const token = localStorage.getItem('jwt');
+
+    api
+      .getUserInfo(token)
+      .then((data) => {
+        console.log(data)
         setСurrentUser(data.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [massageTooltip]);
+
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -99,23 +121,6 @@ function App() {
         closeAllPopups();
       });
   }
-
-  React.useEffect(() => {
-    api
-      .getPageData()
-      .then(([cardsData, userData]) => {
-        // console.log(cardsData.reverse());
-
-        setCards(cardsData.reverse());
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  React.useEffect(() => {
-    checkToken();
-  }, [loggedIn])
 
   function handleCardLike(card) {
     const isLiked = card.likes.some((i) => i === currentUser._id);
