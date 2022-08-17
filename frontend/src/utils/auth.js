@@ -49,16 +49,3 @@ export const validToken = (token) => {
     return getResponse(res)
   })
 }
-
-// export const validToken = (token) => {
-//   return fetch(`https://auth.nomoreparties.co/users/me`, {
-//     method: 'GET',
-//     headers: {
-//       "Content-Type": "application/json",
-//       "Authorization" : `Bearer ${token}`
-//     } 
-//   })
-//   .then((res) => {
-//     return getResponse(res)
-//   })
-// }
