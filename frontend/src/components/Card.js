@@ -15,8 +15,6 @@ function Card(props) {
     !isLiked ? "element__like" : "element__like element__like_active"
   }`;
 
-  // console.log(isLiked)
-
   function handleCardClick() {
     props.onCardClick(props.card);
   }

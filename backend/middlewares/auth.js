@@ -13,7 +13,6 @@ module.exports = (req, res, next) => {
   const secret = NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret';
 
   try {
-    console.log( "secretauth ", secret);
     payload = jwt.verify(token, secret);
   } catch (err) {
     throw new UnauthorizedError('Необходима авторизация');
