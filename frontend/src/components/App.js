@@ -43,7 +43,6 @@ function App() {
     api
       .getInitialCards(token)
       .then((data) => {
-        console.log('getnital: ', data)
         setCards(data.reverse());
       })
       .catch((err) => {
@@ -57,7 +56,6 @@ function App() {
     api
       .getUserInfo(token)
       .then((data) => {
-        console.log(data)
         setСurrentUser(data.data);
       })
       .catch((err) => {
