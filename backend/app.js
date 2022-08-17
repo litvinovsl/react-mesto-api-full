@@ -37,7 +37,6 @@ app.get('/crash-test', () => {
 app.post('/signin', validatorLogin, login);
 app.post('/signup', validatorCreateUser, createUser);
 
-// здесь обрабатываем все ошибки
 app.use('/', auth, usersRouter);
 app.use('/', auth, cardsRouter);
 app.use('*', errorRouter);
