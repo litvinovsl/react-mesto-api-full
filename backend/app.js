@@ -39,7 +39,7 @@ app.post('/signup', validatorCreateUser, createUser);
 
 app.use('/', auth, usersRouter);
 app.use('/', auth, cardsRouter);
-app.use('*', errorRouter);
+app.use('*', auth, errorRouter);
 
 app.use(errorLogger);
 
