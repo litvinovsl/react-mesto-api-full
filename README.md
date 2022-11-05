@@ -24,9 +24,9 @@
 Клонировать репозиторий. Френтенд часть запускается: npm install, npm run start.  Бэкэнд часть: npm install, npm start.
 
 ## Использованные версии:
-react: 18.1.0,
-react-dom: 18.1.0,
-react-router-dom: 5.3.3,
-node: 16.14.2,
-mongoose: 6.4.4,
-express: 4.18.1.
+- react: 18.1.0,
+- react-dom: 18.1.0,
+- react-router-dom: 5.3.3,
+- node: 16.14.2,
+- mongoose: 6.4.4,
+- express: 4.18.1.
